@@ -6,10 +6,8 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-
 	</head>
 	<body>
-
 		<header>
 			<div class="container">
 				<h1>Aparecida Nutrição</h1>
@@ -73,5 +71,12 @@
 			</section>
 		</main>
 
+		<script type="text/javascript">
+			var titulo = document.querySelector("h1");
+			console.log(titulo.textContent);
+			console.log(document.querySelector("h1"));
+			titulo.textContent = "Aparecida Nutricionista";
+
+		</script>	
 	</body>
 </html>
