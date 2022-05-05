@@ -42,6 +42,7 @@ for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular o
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
-botaoAdicionar.addEventListener("click", function(){ // funcão anônima para monitorar o click, no caso, do botão do formulário
+botaoAdicionar.addEventListener("click", function(event){ // funcão anônima para monitorar o click, no caso, do botão do formulário
+	event.preventDefault();								// fazendo com que o padrão do html não seja executado
 	console.log("oi");
 });
