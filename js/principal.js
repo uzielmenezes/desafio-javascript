@@ -7,7 +7,7 @@ titulo.textContent = "Aparecida Nutricionista"; // alterando o conteúdo da clas
 
 var pacienteTotal = document.querySelectorAll(".paciente"); // buscando todos os elementos com a classe paciente
 
-for(var i = 0; i < pacienteTotal.length; i++) {
+for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular os imcs de acordo com cada paciente da lista
 
 	var paciente = pacienteTotal[i];
 
@@ -34,6 +34,6 @@ for(var i = 0; i < pacienteTotal.length; i++) {
 	if(pesoValido && alturaValida){ // condição if para cálculo do imc se tanto o peso como altura forem válidos
 	var imc = peso / (altura*altura); // calculando o imc do primeiro paciente e gerando sua variável
 	infoImc.textContent = imc.toFixed(2); // buscando o conteúdo da classe do imc do primeiro paciente e atribuindo o valor do primeiro imc calculado
-	}
+	}									// toFixed para setar as casas decimais de uma variável,
 
 }
