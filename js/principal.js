@@ -39,3 +39,9 @@ for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular o
 	}									// toFixed para setar as casas decimais de uma variável,
 
 }
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+
+botaoAdicionar.addEventListener("click", function(){ // funcão anônima para monitorar o click, no caso, do botão do formulário
+	console.log("oi");
+});
