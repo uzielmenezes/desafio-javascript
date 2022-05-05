@@ -20,13 +20,12 @@ botaoAdicionar.addEventListener("click", function(event){ // funcão anônima pa
 	pesoTd.textContent = peso;
 	alturaTd.textContent = altura;
 	gorduraTd.textContent = gordura;
-	// imcTd.textContent = imc;        será adicionado no futuro
-
+    imcTd.textContent = calculaImc(peso,altura);        
 	pacienteTr.appendChild(nomeTd);    // adicionando os td's ao tr
 	pacienteTr.appendChild(pesoTd);
 	pacienteTr.appendChild(alturaTd);
 	pacienteTr.appendChild(gorduraTd);
-	// pacienteTr.appendChild(imcTd);  será adicionado no futuro
+	pacienteTr.appendChild(imcTd);  
 
 	var tabela = document.querySelector("#tabela-pacientes"); // buscando o tbody
 

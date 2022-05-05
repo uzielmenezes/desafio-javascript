@@ -34,9 +34,14 @@ for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular o
 	}
 
 	if(pesoValido && alturaValida){ // condição if para cálculo do imc se tanto o peso como altura forem válidos
-	var imc = peso / (altura*altura); // calculando o imc do primeiro paciente e gerando sua variável
-	infoImc.textContent = imc.toFixed(2); // buscando o conteúdo da classe do imc do primeiro paciente e atribuindo o valor do primeiro imc calculado
+	var imc = calculaImc(peso,altura); // calculando o imc do primeiro paciente e gerando sua variável
+	infoImc.textContent = imc; // buscando o conteúdo da classe do imc do primeiro paciente e atribuindo o valor do primeiro imc calculado
 	}									// toFixed para setar as casas decimais de uma variável,
 
 }
 
+function calculaImc(peso,altura){
+	var imc = 0;
+	imc = peso / (altura * altura);
+	return imc.toFixed(2);
+}
