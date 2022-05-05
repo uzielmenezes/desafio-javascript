@@ -58,6 +58,10 @@ table{
 
 }
 
+.paciente-invalido {
+	background-color: #C0C0C0;
+}
+
 td, th {
 	padding: .7em;
 	margin: 0;

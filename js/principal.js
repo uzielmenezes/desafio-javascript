@@ -24,11 +24,13 @@ for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular o
 	if(peso <= 0 || peso >= 1000){ // condição if para pesos menores ou iguais a 0 ou maiores ou iguais a 1000, informando caso seja inválido
 		pesoValido = false;
 		infoImc.textContent = "Peso inválido!";
+		paciente.classList.add("paciente-invalido"); // adicionando uma classe no java para ser alterado no css, caso peso seja inválido
 	}
 
 	if(altura <= 0 || altura >= 3.00){ // mesmo da condição acima, informando caso altura seja inválida
 		alturaValida = false;
 		infoImc.textContent = "Altura Inválida!";
+		paciente.classList.add("paciente-invalido"); // adicionando uma classe no java para ser alterado no css, caso altura seja inválida
 	}
 
 	if(pesoValido && alturaValida){ // condição if para cálculo do imc se tanto o peso como altura forem válidos
