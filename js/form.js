@@ -30,9 +30,9 @@ botaoAdicionar.addEventListener("click", function(event){ // funcão anônima pa
 function exibeMensagensErro(erros) {
 	var ul = document. querySelector("#mensagens-erro");
 	ul.innerHTML = "";
-	erros.forEach(function(erros) {
+	erros.forEach(function(erro) {
 		var li = document.createElement("li");
-		li.textContent = erros;
+		li.textContent = erro;
 		ul.appendChild(li);
 	});
 }
