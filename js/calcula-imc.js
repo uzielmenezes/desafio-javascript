@@ -17,17 +17,17 @@ for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular o
 
 	var infoImc = paciente.querySelector(".info-imc"); // buscando a classe do imc do primeiro paciente e gerando sua variável
 
-	var pesoValido = true; // iniciação da variável de peso válido para o if
+	var pesoValido = validaPeso(peso); // iniciação da variável de peso válido para o if
 
-	var alturaValida = true; // mesmo para altura
+	var alturaValida = validaAltura(altura); // mesmo para altura
 
-	if(peso <= 0 || peso >= 1000){ // condição if para pesos menores ou iguais a 0 ou maiores ou iguais a 1000, informando caso seja inválido
+	if(!pesoValido){ // condição if para pesos menores ou iguais a 0 ou maiores ou iguais a 1000, informando caso seja inválido
 		pesoValido = false;
 		infoImc.textContent = "Peso inválido!";
 		paciente.classList.add("paciente-invalido"); // adicionando uma classe no java para ser alterado no css, caso peso seja inválido
 	}
 
-	if(altura <= 0 || altura >= 3.00){ // mesmo da condição acima, informando caso altura seja inválida
+	if(!alturaValida){ // mesmo da condição acima, informando caso altura seja inválida
 		alturaValida = false;
 		infoImc.textContent = "Altura Inválida!";
 		paciente.classList.add("paciente-invalido"); // adicionando uma classe no java para ser alterado no css, caso altura seja inválida
@@ -38,6 +38,22 @@ for(var i = 0; i < pacienteTotal.length; i++) {  // função for para calcular o
 	infoImc.textContent = imc; // buscando o conteúdo da classe do imc do primeiro paciente e atribuindo o valor do primeiro imc calculado
 	}									// toFixed para setar as casas decimais de uma variável,
 
+}
+
+function validaPeso(peso) {
+	if(peso >= 0 && peso < 1000) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function validaAltura(altura) {
+	if(altura >= 0 && altura <= 3.0) {
+		return true;
+	}else {
+		return false;
+	}
 }
 
 function calculaImc(peso,altura){
