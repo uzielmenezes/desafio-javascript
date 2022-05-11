@@ -5,10 +5,6 @@ botaoAdicionar.addEventListener("click", function(event){ // funcão anônima pa
 	var form = document.querySelector("#form-adiciona"); // buscando o formulário e os seus valores específicos
 	// Extraindo informações do paciente do form
 	var paciente = obtemPacienteFormulario(form);
-
-	//  cria a tr e a td do paciente
-	var pacienteTr = montaTr(paciente);
-
 	var erros = validaPaciente(paciente);
 
 	if (erros.length > 0) {
@@ -17,15 +13,20 @@ botaoAdicionar.addEventListener("click", function(event){ // funcão anônima pa
 	}
 
 	// adicionando o paciente na tabela
-	var tabela = document.querySelector("#tabela-pacientes"); // buscando o tbody
-
-	tabela.appendChild(pacienteTr);    // adicionando o tr ao tbody
+	adicionaPacienteTabela(paciente); // função que cria os pacientes e adiciona na tabela
 
 	form.reset();
 	var mensagensErro = document.querySelector("#mensagens-erro");
 	mensagensErro.innerHTML = "";
 
 });
+
+function adicionaPacienteTabela(paciente) {
+	//  cria a tr e a td do paciente
+	var pacienteTr = montaTr(paciente);
+	var tabela = document.querySelector("#tabela-pacientes");
+	tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagensErro(erros) {
 	var ul = document. querySelector("#mensagens-erro");

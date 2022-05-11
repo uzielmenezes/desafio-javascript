@@ -1,3 +1,4 @@
+// AJAX = BUSCA ASSÍNCRONA NO JAVASCRIPT PARA JSON, XML, HTML OU ATÉ MESMO TXT
 var botaoAdicionar = document.querySelector("#buscar-paciente");
 
 botaoAdicionar.addEventListener("click", function() {
@@ -7,7 +8,14 @@ botaoAdicionar.addEventListener("click", function() {
 	xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
 
 	xhr.addEventListener("load", function() {
-		console.log(xhr.responseText);
+		var resposta = xhr.responseText;
+
+		var pacientes = JSON.parse(resposta);
+
+		pacientes.forEach(function(paciente) {
+			adicionaPacienteTabela(paciente);
+		});
+		
 	});
 
 	xhr.send();
